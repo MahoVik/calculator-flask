@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Калькулятор</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+      {% if error %}
+      {{ error }}
+      {% endif %}
+      <form action="/" method="post">
+          <label for="expression">Ваш пример :3</label>
+          <input type="text" id="expression" name="expression">
+            <br>
+          <button type="submit">Посчитать</button>
+      </form>
+      <textarea>
+      {% if res %}
+      {{ res }}
+      {% endif %}
+      </textarea>
+    </body>
+</html>
